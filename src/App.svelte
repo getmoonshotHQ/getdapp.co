@@ -4,6 +4,7 @@
 
 <main>
 	<img src={src} width="200px" height="auto" alt="Elastos">
+	Test deploy
 </main>
 
 <style>
