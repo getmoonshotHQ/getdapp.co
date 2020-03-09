@@ -1,17 +1,9 @@
-<script>
-	let src = 'elastos.png'
-</script>
-
-<main>
-	<img src={src} width="200px" height="auto" alt="Elastos">
-</main>
-
 <style>
 	main {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 100%;
+		height: calc(100vh - 25px);
 	}
 
 	@media (min-width: 640px) {
@@ -20,3 +12,7 @@
 		}
 	}
 </style>
+
+<main>
+	<slot></slot>
+</main>
