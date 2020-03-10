@@ -1,3 +1,5 @@
+![Deploy](https://github.com/getmoonshotHQ/getdapp.co/workflows/Deploy/badge.svg)
+
 # sapper-template
 
 The default [Sapper](https://github.com/sveltejs/sapper) template, available for Rollup and webpack.
