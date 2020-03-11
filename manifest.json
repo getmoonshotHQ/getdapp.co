@@ -1,8 +1,8 @@
 {
 	"background_color": "#ffffff",
 	"theme_color": "#333333",
-	"name": "TODO",
-	"short_name": "TODO",
+	"name": "getdapp.co",
+	"short_name": "getdapp.co",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [
