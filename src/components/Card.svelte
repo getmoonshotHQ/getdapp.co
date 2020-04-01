@@ -46,7 +46,7 @@
 </style>
 
 <a href={`https://scheme.elastos.org/app?id=${dapp.packageName}`} target="_blank">
-	<img src={`https://dapp-store.elastos.org/apps/${dapp._id}/icon`} alt={dapp.appName} />
+	<img src={`https://dapp-store.elastos.org/apps/${dapp.packageName}/icon`} alt={dapp.appName} />
 	<div>
 		<h3>{dapp.appName}</h3>
 		<h4>{dapp.appShortDescription || dapp.appDescription}</h4>
