@@ -1,31 +1,35 @@
 <style>
 	main {
-		margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-		max-width: 1280px;
+		max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
 		font-family: 'Lato', sans-serif;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 1.5;
+		color: #333;
 	}
 
 	header {
 		display: flex;
-		justify-content: center;
-		align-content: center;
-		text-align: center;
 		padding: 32px;
-		border-bottom: 1px solid rgb(240, 240, 240);
 		font-size: 16px;
-		line-height: 16px;
+		line-height: 18px;
 		font-family: 'Lato', sans-serif;
 	}
 
 	header img {
-		margin-left: 8px;
+		margin-left: 6px;
+	}
+	footer {
+    line-height: 80px;
+    margin: 20px auto 0 auto;
+    color: #555;
 	}
 </style>
 
 <header>
-	<em>powered by</em> <a href="https://www.elastos.org/" target="_blank"><img src="elastos.png" width="auto" height="20" alt="Elastos" /></a>
+	 	<em>powered by</em> <a href="https://www.elastos.org/" target="_blank"><img src="elastos.png" width="auto" height="20" alt="Elastos" /></a>
 </header>
 <main>
 	<slot></slot>
