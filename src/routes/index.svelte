@@ -10,7 +10,6 @@
 
 <script>
 	import { onMount } from 'svelte'
-	import Card from '../components/Card.svelte';
 	import Disclaimer from '../components/Disclaimer.svelte'
 	import PromoCarousel from '../components/PromoCarousel.svelte'
 	import TitledSection from '../components/TitledSection.svelte'

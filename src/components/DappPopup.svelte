@@ -18,10 +18,6 @@
       popupElement.style.top = `calc(50vh - ${170 + heightSurplus/2}px`;
     }
   });
-
-  function navigateToDappSite(url) {
-    window.location.href = url;
-  }
 </script>
 
 <style>
@@ -108,6 +104,7 @@
     padding: 0;
   }
   .button {
+    display: block;
     background-color: #e5efff;
     border-radius: 20px;
     color: #5595ff;
@@ -117,6 +114,13 @@
     padding: 0 12px;
     text-align: center;
   }
+
+  .button:hover {
+    text-decoration: none;
+    background: #2158b1;
+    color: #fff;
+  }
+
   .button:active {
     background: #5595ff; color: #fff; transition: all 0.1s ease-in-out;
   }
@@ -142,7 +146,7 @@
           .replace('<p>', '')
           .replace('</p>','')}</div>
     </div>
-    <div class="button" on:click={() => { navigateToDappSite(`https://scheme.elastos.org/app?id=${dapp.packageName}`); }}>GO</div>
+    <a class="button" href={`https://scheme.elastos.org/app?id=${dapp.packageName}?utm_source=getdapp`} target="_blank" rel="noopener">GO</a>
     <div class="close" on:click={() => { close(); }}>
       <img alt="close" src="close-icon.svg" />
     </div>

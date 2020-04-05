@@ -193,17 +193,13 @@
       prepareElementSizes();
     });
   });
-
-  function navigateToUrl(url) {
-    location.href = `${url}?utm_source=getdapp`;
-  }
   
 </script>
 
 <div class="promo-carousel">
   <div class="slider" bind:this={sliderElement}>
     {#each carouselItems as item}
-        <div class="item" style={`background-image: url(${item.imageUrl}); background-color: ${item.color};`} on:click={() => { navigateToUrl(item.url);}}></div>
+        <a class="item" href={`${item.url}?utm_source=getdapp`} target="_blank" rel="noopener" style={`background-image: url(${item.imageUrl}); background-color: ${item.color};`}></a>
     {/each}
   </div>
   <div class="dots">
