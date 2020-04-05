@@ -80,15 +80,19 @@
 
 	async function onResize() {
 		const maxWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		columms = Math.min(Math.max(parseInt(maxWidth / 100), 3), 9);
+		const d = maxWidth < 900 ? 80 : 104;
+		columms = Math.min(Math.max(Math.floor((maxWidth - 48) / d), 3), 9);
 		
 		CATEGORIES.forEach(category => {
 			dAppsGhostByCategory[category] = []
 			const ghosts = columms - (dAppsByCategory[category].length % columms)
 			console.log(ghosts, 'ghosts', category, dAppsByCategory[category], dAppsByCategory[category].length, columms, dAppsByCategory[category].length % columms)
-			for(let i = 0; i < ghosts; i++) {
-				dAppsGhostByCategory[category].push(true)
+			if(ghosts < columms) {
+				for(let i = 0; i < ghosts; i++) {
+					dAppsGhostByCategory[category].push(true)
+				}
 			}
+			
 			console.log('dAppsGhostByCategory[category]', dAppsGhostByCategory[category].length)
 		})
 	}

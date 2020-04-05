@@ -6,15 +6,15 @@
     margin-bottom: 4px;
     width: 66px;
     overflow: hidden;
-    filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.15));
     position: relative;
   }
   .faux-border,
   .squircle-cut {
-    background-color: white;
+    background-color:white;
     clip-path: url(#squircle-clip);    
     height: 66px;
     width: 66px;
+    border-radius: 15px
   }
   .faux-border {
     background-color: rgba(0, 0, 0, 0.08);
