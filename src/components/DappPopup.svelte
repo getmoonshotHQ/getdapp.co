@@ -146,7 +146,7 @@
           .replace('<p>', '')
           .replace('</p>','')}</div>
     </div>
-    <a class="button" href={`https://scheme.elastos.org/app?id=${dapp.packageName}?utm_source=getdapp`} target="_blank" rel="noopener">GO</a>
+    <a class="button" href={`https://scheme.elastos.org/app?id=${dapp.packageName}`} target="_blank" rel="noopener">GO</a>
     <div class="close" on:click={() => { close(); }}>
       <img alt="close" src="close-icon.svg" />
     </div>

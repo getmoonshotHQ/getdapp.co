@@ -199,7 +199,7 @@
 <div class="promo-carousel">
   <div class="slider" bind:this={sliderElement}>
     {#each carouselItems as item}
-        <a class="item" href={`${item.url}?utm_source=getdapp`} target="_blank" rel="noopener" style={`background-image: url(${item.imageUrl}); background-color: ${item.color};`}></a>
+        <a class="item" href={item.url} target="_blank" rel="noopener" style={`background-image: url(${item.imageUrl}); background-color: ${item.color};`}></a>
     {/each}
   </div>
   <div class="dots">
