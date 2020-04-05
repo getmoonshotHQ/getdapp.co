@@ -10,7 +10,8 @@
     width: 100%;
     position: relative;
     padding: 0 24px;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
 
     display: flex;
     align-items: stretch;
