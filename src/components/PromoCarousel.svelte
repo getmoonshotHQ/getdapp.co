@@ -185,10 +185,10 @@
     });
     sliderElement.addEventListener('mousewheel', (e) => {
       e.preventDefault();
-    });
+    }, { passive: true });
     sliderElement.addEventListener('touchstart', () => {
       clearInterval(rotateIntervalHandler);
-    });
+    }, { passive: true });
     window.addEventListener('resize', () => {
       prepareElementSizes();
     });

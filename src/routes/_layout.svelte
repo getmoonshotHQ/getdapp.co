@@ -29,7 +29,7 @@
 </style>
 
 <header>
-	 	<em>powered by</em> <a href="https://www.elastos.org/" target="_blank"><img src="elastos.png" width="auto" height="20" alt="Elastos" /></a>
+	 	<em>powered by</em> <a href="https://www.elastos.org/" rel="noopener" target="_blank"><img src="elastos.png" width="auto" height="20" alt="Elastos" /></a>
 </header>
 <main>
 	<slot></slot>

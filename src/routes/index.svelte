@@ -112,7 +112,24 @@
 
 
 <svelte:head>
+		<!-- Primary Meta Tags -->
 	<title>Discover your next favorite decentralized app!</title>
+	<meta name="title" content="Discover your next favorite decentralized app!">
+	<meta name="description" content="Latest & Top Blockchain Dapps powered by Elastos | Learn Everything About Decentralized Apps">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.getdapp.co/">
+	<meta property="og:title" content="Discover your next favorite decentralized app!">
+	<meta property="og:description" content="Latest & Top Blockchain Dapps powered by Elastos | Learn Everything About Decentralized Apps">
+	<meta property="og:image" content="https://www.getdapp.co/social_share.jpg">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://www.getdapp.co//">
+	<meta property="twitter:title" content="Discover your next favorite decentralized app!">
+	<meta property="twitter:description" content="Latest & Top Blockchain Dapps powered by Elastos | Learn Everything About Decentralized Apps">
+	<meta property="twitter:image" content="https://www.getdapp.co/social_share.jpg">
 </svelte:head>
 {#if currentdApp}<DappPopup dapp={currentdApp} close={handleClose}></DappPopup>{/if}
 
