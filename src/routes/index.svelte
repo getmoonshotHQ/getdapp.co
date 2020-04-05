@@ -9,6 +9,7 @@
 </script>
 
 <script>
+	import { onMount } from 'svelte'
 	import Card from '../components/Card.svelte';
 	import Disclaimer from '../components/Disclaimer.svelte'
 	import PromoCarousel from '../components/PromoCarousel.svelte'
@@ -41,15 +42,12 @@
 
 	let currentdApp = null
 	let dAppsByCategory = {}
+	let dAppsGhostByCategory = {}
+	let columms = 3
 
 	CATEGORIES.forEach(category => {
-		dAppsByCategory[category] = []
-	});
-	
-	dapps.forEach(dapp => {
-		dapp.description = dapp.appDescription || dapp.appShortDescription
-		dAppsByCategory[dapp.category].push(dapp)
-	});
+			dAppsByCategory[category] = []
+		});
 
 	const featuredDapps = [
 		getDapp('org.elastos.trinity.dapp.dappstore', '#f90000'),
@@ -79,16 +77,46 @@
 	function handleOpen(dapp) {
 		currentdApp = dapp
 	}
+
+	async function onResize() {
+		const maxWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		columms = Math.min(Math.max(parseInt(maxWidth / 100), 3), 9);
+		
+		CATEGORIES.forEach(category => {
+			dAppsGhostByCategory[category] = []
+			const ghosts = columms - (dAppsByCategory[category].length % columms)
+			console.log(ghosts, 'ghosts', category, dAppsByCategory[category], dAppsByCategory[category].length, columms, dAppsByCategory[category].length % columms)
+			for(let i = 0; i < ghosts; i++) {
+				dAppsGhostByCategory[category].push(true)
+			}
+			console.log('dAppsGhostByCategory[category]', dAppsGhostByCategory[category].length)
+		})
+	}
+
+	onMount(async () => {
+		
+		dapps.forEach(dapp => {
+			dapp.description = dapp.appDescription || dapp.appShortDescription
+			dAppsByCategory[dapp.category].push(dapp)
+		});
+
+		onResize();
+	});
+
+	
 </script>
 
 <style>
 	
 </style>
 
+
 <svelte:head>
 	<title>Discover your next favorite decentralized app!</title>
 </svelte:head>
 {#if currentdApp}<DappPopup dapp={currentdApp} close={handleClose}></DappPopup>{/if}
+
+<svelte:window on:resize|passive={onResize} />
 
 <PromoCarousel />
 <TitledSection title="Featured DApps" noborder nopadding>
@@ -106,7 +134,9 @@
 		{#each dAppsByCategory[category] as dapp}
 			<Dapp title={dapp.appName} iconSrc={`https://dapp-store.elastos.org/apps/${dapp.packageName}/icon`} on:click={(evt) => { handleOpen(dapp); }} />
 		{/each}
-		<Dapp ghost />
+		{#each dAppsGhostByCategory[category] as dapp}
+			<Dapp ghost />
+		{/each}
 	</DappsArray>
 </TitledSection>
 {/if}
