@@ -86,14 +86,11 @@
 		CATEGORIES.forEach(category => {
 			dAppsGhostByCategory[category] = []
 			const ghosts = columms - (dAppsByCategory[category].length % columms)
-			console.log(ghosts, 'ghosts', category, dAppsByCategory[category], dAppsByCategory[category].length, columms, dAppsByCategory[category].length % columms)
 			if(ghosts < columms) {
 				for(let i = 0; i < ghosts; i++) {
 					dAppsGhostByCategory[category].push(true)
 				}
 			}
-			
-			console.log('dAppsGhostByCategory[category]', dAppsGhostByCategory[category].length)
 		})
 	}
 

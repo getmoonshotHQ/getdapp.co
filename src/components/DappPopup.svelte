@@ -20,7 +20,7 @@
   });
 
   function navigateToDappSite(url) {
-    window.location.href = `${url}?utm_source=getdapp`;
+    window.location.href = url;
   }
 </script>
 
