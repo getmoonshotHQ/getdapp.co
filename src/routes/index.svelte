@@ -10,6 +10,7 @@
 
 <script>
 	import { onMount } from 'svelte'
+	import { DAPPS_FILTER } from '../dapps-filter.svelte'
 	import Disclaimer from '../components/Disclaimer.svelte'
 	import PromoCarousel from '../components/PromoCarousel.svelte'
 	import TitledSection from '../components/TitledSection.svelte'
@@ -96,8 +97,11 @@
 	onMount(async () => {
 		
 		dapps.forEach(dapp => {
-			dapp.description = dapp.appDescription || dapp.appShortDescription
-			dAppsByCategory[dapp.category].push(dapp)
+			if(DAPPS_FILTER.indexOf(dapp.packageName) < 0 ) {
+				dapp.description = dapp.appDescription || dapp.appShortDescription
+				dAppsByCategory[dapp.category].push(dapp)
+			}
+			
 		});
 
 		onResize();
