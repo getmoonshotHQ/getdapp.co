@@ -30,14 +30,15 @@
     'communication',
     'social',
     'productivity',
-    'business',
-    'entertainment',
-    'games',
-    'music',
-    'casino',
-    'travel',
+    'shopping',
     'lifestyle',
-    'health'
+    'games',
+    'casino',
+    'music',
+    'entertainment',
+    'travel',
+    'health',
+    'techdemo'
 	]
 
 	let currentdApp = null
